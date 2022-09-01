@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&display=swap');
+:root{
+    --primary-color:#e0fbfc;
+    --secondary-color:#293241;
+    --secondary-color2:#8ecae6;
+    --secondary-color3:#e9c46a;
+}
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    height: 100vh;
+}
+
+.note-app, #root{
+    height: 100%;
+}
+
+.note-header{
+    background-color: var(--secondary-color);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 2vh 10vh;
+    height: 10%;
+    align-self: center;
+}
+
+.note-header__copyright{
+    align-self: center;
+}
+
+.note-content{
+    display: flex;
+    flex-wrap: wrap;
+    height: 90%;
+}
+
+.note-sidebar{
+    background-color: var(--primary-color);
+    flex: 30%;
+    padding: 5vh;
+    height: 100%;
+}
+
+.note-list{
+    flex: 70%;
+    text-align:center;
+    padding: 2vh 5vh;
+    overflow-y: auto;
+    height: 100%;
+}
+
+.note-app__add-action {
+    border: 2px solid var(--secondary-color);
+    color: var(--secondary-color);
+    background-color: transparent;
+    padding: 1vh 8vh;
+    width: 100%;
+    cursor:pointer;
+    font-weight: 700;
+    margin: 2vh 0;
+}
+
+.note-app__add-action:hover{
+    background-color: var(--secondary-color);
+    color:white;
+}
+
+.note-serach>input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 1vh;
+    margin: 2vh 0;
+}
