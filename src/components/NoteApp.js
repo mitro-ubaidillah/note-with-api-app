@@ -24,8 +24,12 @@ const NoteApp = () =>  {
         <div className="note-app">
             <NoteHeader />
             <div className="note-content">
-                <NoteSidebar />
-                <NoteItemList notes={notes} />
+                <div className="flex-left">
+                    <NoteSidebar />
+                </div>
+                <div className="flex-right">
+                    <NoteItemList notes={notes} />
+                </div>
             </div>
         </div>
     );

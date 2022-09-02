@@ -6,18 +6,21 @@ class NoteItemList extends React.Component{
         return(
             this.props.notes.length > 0 ?
             <div className="note-list">
-                {
-                    this.props.notes.map((note) => (
-                    <NoteItem 
-                    key={note.id}
-                    id={note.id}
-                    archived={note.archived}
-                    onDelete={this.props.onDelete}
-                    onArchive={this.props.onArchive}
-                    {...note} /> 
-                    ))
-                }
-            </div> : <p className="note-list__empty-message">Tidak ada catatan</p>
+               
+                    {/* <NoteSearch /> */}
+                    {
+                        this.props.notes.map((note) => (
+                        <NoteItem 
+                        key={note.id}
+                        id={note.id}
+                        archived={note.archived}
+                        onDelete={this.props.onDelete}
+                        onArchive={this.props.onArchive}
+                        {...note} /> 
+                        ))
+                    }
+                
+            </div> : <p className="note-list__empty">Tidak ada catatan</p>
         );
     }
 }
