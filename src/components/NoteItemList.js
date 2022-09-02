@@ -19,7 +19,6 @@ class NoteItemList extends React.Component{
                         {...note} /> 
                         ))
                     }
-                
             </div> : <p className="note-list__empty">Tidak ada catatan</p>
         );
     }
