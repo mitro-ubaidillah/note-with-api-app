@@ -8,6 +8,8 @@ import AddButton from "./AddButton";
 const NoteApp = () =>  {
     const [notes, setNote] = useState([]);
     const [noteView, setNoteView] = useState([]);
+    const [keyword, setKeyword] = useState("");
+
     useEffect(() => {
         fetch("http://localhost:8000/notes/")
         .then((res) => {
@@ -21,7 +23,7 @@ const NoteApp = () =>  {
             }
         });
     }, []);
-
+    
     const onArchived = () => { 
        const noteArchive =  notes.filter((note) => {
             return note.archived === true;
@@ -40,15 +42,17 @@ const NoteApp = () =>  {
         setNoteView(notes);
     }
     
+    const noteViewAll = noteView.filter((note) => note.title.toLowerCase().includes(keyword.toLowerCase()));
+
     return(
         <div className="note-app">
-            <NoteHeader />
+            <NoteHeader search={keyword} onSearch={(e) => setKeyword(e.target.value)} />
             <div className="note-content">
                 <div className="flex-left">
                     <NoteSidebar onArchived={onArchived} onAll={onAll} onActive={onActive} />
                 </div>
                 <div className="flex-right">
-                    <NoteItemList notes={noteView} />
+                    <NoteItemList notes={noteViewAll} />
                     <AddButton />
                 </div>
             </div>

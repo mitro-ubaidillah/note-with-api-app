@@ -98,13 +98,13 @@ body{
 }
 
 .note-list{
-    display:flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 350px);
     justify-content: space-between;
-    /* height: 100vh; */
-    margin: 2vh 7vh;
+    margin: 5vh 7vh;
     gap: 15px;
+    height: 75%;
+    /* align-self: stretch; */
 }
 
 .note-list__empty {
@@ -116,11 +116,11 @@ body{
   
 
 .note-item{
-    flex-basis: 350px;
     padding: 2vh;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     margin: 0px;
     border-radius: 8px;
+    align-self: start;
 }
 
 .note-item__content{
@@ -166,7 +166,9 @@ body{
     bottom: 0;
     text-align: right;
     width: 100%;
+    /* height: 100vh; */
     padding: 1vh 3vh;
+    align-items: flex-end;
   }
 
   .note-item_add-button button{
